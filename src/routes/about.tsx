@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import yessicaAsset from "../assets/yessica-martinez.jpg.asset.json";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 
@@ -23,9 +24,9 @@ function AboutPage() {
     <SiteShell>
       <section className="border-t border-border bg-white/60 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
-          <div className="relative rounded-2xl glass p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center overflow-hidden">
+          <div className="relative rounded-2xl glass p-8 md:p-10 grid md:grid-cols-2 gap-10 items-center overflow-hidden">
             <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-crimson/10 blur-3xl" />
-            <div className="relative z-10">
+            <div className="relative z-10 order-2 md:order-1">
               <span className="text-xs font-semibold text-crimson-soft tracking-[0.14em] uppercase">
                 {t.aboutLabel}
               </span>
@@ -43,20 +44,34 @@ function AboutPage() {
                 {t.aboutBody}
               </p>
             </div>
-            <div className="relative z-10 rounded-xl bg-ink text-white p-6">
-              <p className="text-xs text-white/60 tracking-[0.14em] uppercase">
-                {t.trustTitle}
-              </p>
-              <div className="mt-4 grid grid-cols-2 gap-y-6 gap-x-4">
-                {t.trustStats.map(([value, label]) => (
-                  <div key={label}>
-                    <p className="font-display text-2xl md:text-3xl font-bold">
-                      {value}
-                    </p>
-                    <p className="text-xs text-white/60 mt-1">{label}</p>
-                  </div>
-                ))}
+            <div className="relative z-10 order-1 md:order-2">
+              <div className="rounded-xl overflow-hidden glass p-3">
+                <img
+                  src={yessicaAsset.url}
+                  alt="Yessica Martinez, accountant and tax preparer at JC Taxes and Accounting Services"
+                  className="w-full aspect-[3/4] object-cover rounded-lg bg-ice"
+                />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
+          <div className="rounded-2xl bg-ink text-white p-8 md:p-12">
+            <p className="text-xs text-white/60 tracking-[0.14em] uppercase mb-6">
+              {t.trustTitle}
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-8">
+              {t.trustStats.map(([value, label]) => (
+                <div key={label}>
+                  <p className="font-display text-2xl md:text-3xl font-bold">
+                    {value}
+                  </p>
+                  <p className="text-xs text-white/60 mt-1">{label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

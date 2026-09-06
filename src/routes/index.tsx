@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "../assets/hero-tax-preparer.jpg";
+import yessicaAsset from "../assets/yessica-martinez.jpg.asset.json";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 
@@ -69,8 +69,8 @@ function Index() {
             <div className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-cool/20 via-transparent to-crimson/20 blur-2xl" />
             <div className="relative rounded-2xl glass p-3">
               <img
-                src={heroImg}
-                alt="Professional tax preparer reviewing financial documents"
+                src={yessicaAsset.url}
+                alt="Yessica Martinez, accountant and tax preparer at JC Taxes and Accounting Services"
                 className="w-full aspect-[4/5] object-cover rounded-lg bg-ice"
               />
               <div className="mt-3 flex items-center justify-between px-1 pb-1">
