@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 import { serviceImages } from "../lib/service-images";
+import dotMcImage from "../assets/svc-dot-mc.jpg";
+import startupImage from "../assets/svc-startup.jpg";
+
+const uniqueImages = [dotMcImage, startupImage];
 
 export const Route = createFileRoute("/services")({
   head: () => ({
