@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
+import { serviceImages } from "../lib/service-images";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -44,17 +45,29 @@ function ServicesPage() {
             {t.services.map((service, idx) => (
               <div
                 key={service.title}
-                className="glass rounded-2xl p-6 hover:bg-white/90 transition-colors"
+                className="glass rounded-2xl overflow-hidden hover:bg-white/90 transition-colors flex flex-col"
               >
-                <div className="size-11 grid place-items-center rounded-lg bg-crimson/10 text-crimson-soft font-display font-bold clip-logo">
-                  {String(idx + 1).padStart(2, "0")}
+                <div className="relative">
+                  <img
+                    src={serviceImages[idx % serviceImages.length]}
+                    alt={service.title}
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full aspect-[4/3] object-cover bg-ice"
+                  />
+                  <div className="absolute top-3 left-3 size-9 grid place-items-center rounded-md bg-white/85 backdrop-blur-sm text-crimson-soft font-display font-bold text-sm">
+                    {String(idx + 1).padStart(2, "0")}
+                  </div>
                 </div>
-                <h2 className="mt-5 font-display font-bold text-lg text-ink leading-snug">
-                  {service.title}
-                </h2>
-                <p className="mt-3 font-body text-[14px] text-ink-soft leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="p-6">
+                  <h2 className="font-display font-bold text-lg text-ink leading-snug">
+                    {service.title}
+                  </h2>
+                  <p className="mt-3 font-body text-[14px] text-ink-soft leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
