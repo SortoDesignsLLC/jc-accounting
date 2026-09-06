@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { OfficeMaps } from "../components/office-map";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 
@@ -49,6 +50,10 @@ function LocationsPage() {
                 </a>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <OfficeMaps />
           </div>
         </div>
       </section>

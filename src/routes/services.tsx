@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
+import { serviceImages } from "../lib/service-images";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
