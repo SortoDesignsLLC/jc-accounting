@@ -496,25 +496,29 @@ function Index() {
                 </h2>
                 <p className="mt-4 text-ink-soft max-w-md">{t.contactSubtitle}</p>
                 <div className="mt-8 space-y-4">
-                  <p className="flex items-center gap-3 text-sm text-ink-soft">
-                    <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
-                      ✆
-                    </span>
-                    (555) 014-2280
-                  </p>
+                  {t.locations.map((loc) => (
+                    <p key={loc.city} className="flex items-center gap-3 text-sm text-ink-soft">
+                      <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
+                        ✆
+                      </span>
+                      <span>
+                        <span className="font-semibold text-ink">{loc.city}</span>{" "}
+                        <a href={`tel:${loc.phone.replace(/-/g, "")}`} className="hover:text-crimson transition-colors">
+                          {loc.phone}
+                        </a>
+                      </span>
+                    </p>
+                  ))}
                   <p className="flex items-center gap-3 text-sm text-ink-soft">
                     <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
                       ✉
                     </span>
-                    hello@jcaccountingtax.com
-                  </p>
-                  <p className="flex items-center gap-3 text-sm text-ink-soft">
-                    <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
-                      ◷
-                    </span>
-                    {lang === "en" ? "Mon–Fri, 8:30a–5:00p" : "Lun–Vie, 8:30–17:00"}
+                    <a href="mailto:Yessicamartinez893@gmail.com" className="hover:text-crimson transition-colors">
+                      Yessicamartinez893@gmail.com
+                    </a>
                   </p>
                 </div>
+
               </div>
               <form className="glass rounded-2xl p-6 md:p-8">
                 <div className="grid gap-5 sm:grid-cols-2">
