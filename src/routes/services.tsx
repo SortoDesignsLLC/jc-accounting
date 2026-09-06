@@ -84,20 +84,32 @@ function ServicesPage() {
             {t.uniqueTitle}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {t.unique.map((item) => (
-              <div key={item.title} className="glass rounded-2xl p-8 flex flex-col">
-                <h3 className="font-display font-bold text-2xl text-ink">
-                  {item.title}
-                </h3>
-                <p className="mt-4 font-body text-ink-soft leading-relaxed flex-1">
-                  {item.description}
-                </p>
-                <Link
-                  to="/contact"
-                  className="mt-6 self-start bg-crimson hover:bg-crimson-soft transition-colors text-white font-sans font-semibold text-sm px-6 py-3 rounded-md clip-cta"
-                >
-                  {item.cta}
-                </Link>
+            {t.unique.map((item, idx) => (
+              <div key={item.title} className="glass rounded-2xl overflow-hidden flex flex-col">
+                <div className="relative">
+                  <img
+                    src={uniqueImages[idx]}
+                    alt={item.title}
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full aspect-[4/3] object-cover bg-ice"
+                  />
+                </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <h3 className="font-display font-bold text-2xl text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 font-body text-ink-soft leading-relaxed flex-1">
+                    {item.description}
+                  </p>
+                  <Link
+                    to="/contact"
+                    className="mt-6 self-start bg-crimson hover:bg-crimson-soft transition-colors text-white font-sans font-semibold text-sm px-6 py-3 rounded-md clip-cta"
+                  >
+                    {item.cta}
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
