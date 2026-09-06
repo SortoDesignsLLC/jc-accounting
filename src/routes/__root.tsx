@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { LangProvider } from "../lib/lang";
 
 function NotFoundComponent() {
   return (
@@ -118,7 +119,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <LangProvider>
+        <Outlet />
+      </LangProvider>
     </QueryClientProvider>
   );
 }
