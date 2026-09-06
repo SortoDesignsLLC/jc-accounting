@@ -5,14 +5,12 @@ import heroImg from "../assets/hero-tax-preparer.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "JC Accounting & Tax Services LLC" },
-      { name: "description", content: "Tax preparation, bookkeeping, payroll, and small business advisory in English and Spanish." },
-      { property: "og:title", content: "JC Accounting & Tax Services LLC" },
-      { property: "og:description", content: "Tax preparation, bookkeeping, payroll, and small business advisory in English and Spanish." },
+      { title: "JC Taxes & Accounting Services | Hyattsville & Glen Burnie, MD" },
+      { name: "description", content: "Top-rated tax preparation, bookkeeping, payroll and IRS audit representation in Hyattsville and Glen Burnie, MD. 15+ years serving MD, DC and Virginia." },
+      { property: "og:title", content: "JC Taxes & Accounting Services | Hyattsville & Glen Burnie, MD" },
+      { property: "og:description", content: "Top-rated tax preparation, bookkeeping, payroll and IRS audit representation in Hyattsville and Glen Burnie, MD. 15+ years of experience." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80" },
-      { property: "og:image", content: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80" },
     ],
   }),
   component: Index,
@@ -24,123 +22,184 @@ function Index() {
   const t = {
     en: {
       nav: ["Home", "Services", "About", "Locations", "Contact"],
-      badge: "Est. 2011 · Bilingual · EN / ES",
-      headline: "Clarity in every number, confidence in every filing.",
+      badge: "IRS Registered Tax Preparers · Bilingual EN / ES",
+      headline: "Top-rated tax and accounting services in Hyattsville & Glen Burnie.",
       subheadline:
-        "A trusted accounting and tax practice for small businesses and individuals. We turn complex filings, payroll, and books into decisions you can actually make.",
-      ctaPrimary: "Start your tax season",
-      ctaSecondary: "Explore services",
+        "JC Taxes and Accounting Services is a professional firm serving individuals and businesses across Maryland, D.C. and Virginia — with personalized solutions built around your specific needs.",
+      ctaPrimary: "Free Consultation",
+      ctaSecondary: "Our services",
       stats: [
-        ["14 yrs", "In practice"],
-        ["2,300+", "Returns filed"],
-        ["98%", "On-time delivery"],
+        ["15+", "Years of experience"],
+        ["10,000+", "Tax returns prepared"],
+        ["1,000+", "Businesses served"],
       ],
-      servicesTitle: "Services built for the way you run your money.",
-      servicesSubtitle: "Three services, one standard of care.",
+      servicesTitle: "Our Services",
+      servicesSubtitle: "Everything individuals and small businesses need, in one office.",
       services: [
+        { title: "Tax Preparation and Filing", description: "Individual and business returns prepared accurately and filed on time." },
+        { title: "Bookkeeping & Payroll", description: "Clean monthly books and payroll handled so your records stay audit-ready." },
+        { title: "Small Business Consultation", description: "Practical guidance on structure, taxes and growth for local business owners." },
+        { title: "Tax Audits Resolution", description: "IRS audit representation and resolution, handled on your behalf." },
+        { title: "Public Notary", description: "Notary services available at both our Maryland offices." },
+        { title: "Birth Certificate Translation", description: "Certified translation of birth certificates and personal documents." },
+        { title: "Financial Consulting & Tax Planning", description: "Year-round planning so tax season never catches you off guard." },
+        { title: "And more!", description: "Retirement planning, personal and business tax services, and more — just ask." },
+      ],
+      uniqueTitle: "Unique Services",
+      unique: [
         {
-          title: "Tax Preparation & Filing",
+          title: "US DOT & MC Number Compliance",
           description:
-            "Individual 1040s, 1120s & 1065s reviewed line-by-line. We find every deduction you've been leaving on the table.",
-          price: "From $250 · Individual",
+            "Running a transportation company? We assist in obtaining and maintaining US DOT and MC numbers, ensuring full compliance with federal regulations.",
+          cta: "Contact Us",
         },
         {
-          title: "Bookkeeping & Payroll",
+          title: "Start-up Business Consulting",
           description:
-            "Clean monthly books, reconciled accounts, and payroll that runs on schedule — so your numbers are always auditable.",
-          price: "From $390/mo · Business",
-        },
-        {
-          title: "Small Business Advisory",
-          description:
-            "Entity structuring, cash-flow planning, and quarterly check-ins that keep your growing business ahead of the season.",
-          price: "Custom · Retainer",
+            "Are you a small business owner looking to save on taxes? Our strategic tax planning has helped many small businesses save substantial amounts, fostering their growth and success.",
+          cta: "Free Consultation",
         },
       ],
-      trustTitle: "Trusted by local owners, year after year.",
-      trustQuote:
-        "They made my S-corp books painless for the first time. I actually understand where the money goes.",
-      trustAuthor: "R. Delgado, Owner",
+      aboutLabel: "Meet the Team",
+      aboutName: "Yessica Martinez",
+      aboutRole: "Accountant | Tax Preparer",
+      aboutBio:
+        "With 15+ years of experience, provides top-rated tax preparation and accounting services in Hyattsville, MD and Glen Burnie, MD.",
+      aboutTitle: "Our Commitment to Excellence",
+      aboutBody:
+        "We take pride in offering reliable tax preparation services and small business accounting solutions in Hyattsville and Glen Burnie. Our expertise in certified tax accounting ensures that our clients receive the best possible service, whether they're looking for affordable tax preparation or expert tax advice.",
+      trustTitle: "Why Choose JC Taxes?",
       trustStats: [
-        ["312", "active clients"],
-        ["2", "neighborhood offices"],
-        ["EN / ES", "fully bilingual staff"],
-        ["$4.8M", "credits secured"],
+        ["1,000+", "Businesses Served"],
+        ["10,000+", "Tax Returns Prepared"],
+        ["15+", "Years of Experience"],
+        ["100%", "Client Satisfaction"],
       ],
-      contactTitle: "Start the conversation",
-      contactSubtitle: "Reach out in English or Spanish. We reply within one business day.",
+      locationsTitle: "Our Locations",
+      locationsSubtitle: "Serving Maryland, D.C. and Virginia",
+      locations: [
+        {
+          city: "Hyattsville, MD",
+          address: "3501 Hamilton St Suite 201C, Hyattsville, MD 20782",
+          phone: "301-732-1690",
+          description:
+            "Top-rated tax preparation and accounting services. Specializing in business tax preparation and IRS audit representation, we provide reliable, affordable tax solutions for individuals and businesses.",
+        },
+        {
+          city: "Glen Burnie, MD",
+          address: "7310 Richie Hwy 200/GB10, Glen Burnie, MD 21061",
+          phone: "240-877-8622",
+          description:
+            "Individual tax services, business tax preparation and IRS audit representation, plus personalized financial planning, bookkeeping and payroll services for the surrounding areas.",
+        },
+      ],
+      contactTitle: "Let's Chat!",
+      contactSubtitle: "Reach out in English or Spanish and we'll get right back to you.",
+      emailLabel: "Email",
       form: {
         name: "Full name",
-        namePlaceholder: "Jane Miller",
+        namePlaceholder: "Your name",
         email: "Email",
-        emailPlaceholder: "jane@company.com",
+        emailPlaceholder: "you@email.com",
         help: "How can we help?",
-        helpPlaceholder: "I need help with this year's filing and quarterly estimates…",
+        helpPlaceholder: "I need help with this year's filing…",
         submit: "Send message",
         reply: "We reply within one business day.",
       },
-      footer: "© 2024 JC Accounting & Tax Services LLC",
+      footer: "© 2026 JC Taxes and Accounting Services",
+      footerTag: "Serving Maryland, D.C. and Virginia · EN / ES",
     },
     es: {
       nav: ["Inicio", "Servicios", "Nosotros", "Ubicaciones", "Contacto"],
-      badge: "Desde 2011 · Bilingüe · EN / ES",
-      headline: "Claridad en cada cifra, confianza en cada declaración.",
+      badge: "Preparadores registrados ante el IRS · Bilingüe EN / ES",
+      headline: "Servicios de impuestos y contabilidad en Hyattsville y Glen Burnie.",
       subheadline:
-        "Una firma de contabilidad y tributos de confianza para pequeñas empresas y personas. Convertimos declaraciones complejas, nóminas y libros en decisiones claras.",
-      ctaPrimary: "Inicie su temporada fiscal",
-      ctaSecondary: "Explore servicios",
+        "JC Taxes and Accounting Services es una firma profesional que atiende a personas y empresas en Maryland, D.C. y Virginia, con soluciones personalizadas según sus necesidades.",
+      ctaPrimary: "Consulta gratuita",
+      ctaSecondary: "Nuestros servicios",
       stats: [
-        ["14 años", "De trayectoria"],
-        ["2,300+", "Declaraciones presentadas"],
-        ["98%", "Entregas a tiempo"],
+        ["15+", "Años de experiencia"],
+        ["10,000+", "Declaraciones preparadas"],
+        ["1,000+", "Negocios atendidos"],
       ],
-      servicesTitle: "Servicios diseñados para cómo maneja su dinero.",
-      servicesSubtitle: "Tres servicios, un solo estándar de cuidado.",
+      servicesTitle: "Nuestros Servicios",
+      servicesSubtitle: "Todo lo que personas y pequeñas empresas necesitan, en una sola oficina.",
       services: [
+        { title: "Preparación y presentación de impuestos", description: "Declaraciones personales y de negocios preparadas con precisión y presentadas a tiempo." },
+        { title: "Contabilidad y nómina", description: "Libros mensuales ordenados y nómina puntual para mantener sus registros al día." },
+        { title: "Consultoría para pequeñas empresas", description: "Orientación práctica sobre estructura, impuestos y crecimiento del negocio." },
+        { title: "Resolución de auditorías", description: "Representación ante el IRS y resolución de auditorías en su nombre." },
+        { title: "Notaría pública", description: "Servicios de notaría disponibles en nuestras dos oficinas de Maryland." },
+        { title: "Traducción de actas de nacimiento", description: "Traducción certificada de actas de nacimiento y documentos personales." },
+        { title: "Consultoría financiera y planeación fiscal", description: "Planeación durante todo el año para que la temporada fiscal nunca lo sorprenda." },
+        { title: "¡Y más!", description: "Planeación de retiro, servicios fiscales personales y de negocio, y más — solo pregunte." },
+      ],
+      uniqueTitle: "Servicios Únicos",
+      unique: [
         {
-          title: "Preparación y presentación de impuestos",
+          title: "Cumplimiento de US DOT y número MC",
           description:
-            "Formularios 1040, 1120 y 1065 revisados línea por línea. Encontramos cada deducción que ha dejado pasar.",
-          price: "Desde $250 · Individual",
+            "¿Tiene una compañía de transporte? Le ayudamos a obtener y mantener los números US DOT y MC, asegurando el cumplimiento total de las regulaciones federales.",
+          cta: "Contáctenos",
         },
         {
-          title: "Contabilidad y nómina",
+          title: "Consultoría para nuevos negocios",
           description:
-            "Libros limpios cada mes, cuentas conciliadas y nómina puntual — para que sus números siempre estén auditables.",
-          price: "Desde $390/mes · Empresa",
-        },
-        {
-          title: "Asesoría para pequeñas empresas",
-          description:
-            "Estructura de entidad, planeación de flujo de caja y revisiones trimestrales que mantienen su negocio adelante.",
-          price: "Personalizado · Retainer",
+            "¿Es dueño de un pequeño negocio y busca ahorrar en impuestos? Nuestra planeación fiscal estratégica ha ayudado a muchas pequeñas empresas a ahorrar cantidades importantes, impulsando su crecimiento y éxito.",
+          cta: "Consulta gratuita",
         },
       ],
-      trustTitle: "Confiado por dueños locales, año tras año.",
-      trustQuote:
-        "Por primera vez mis libros de S-corp fueron sencillos. Finalmente entiendo a dónde va el dinero.",
-      trustAuthor: "R. Delgado, Dueño",
+      aboutLabel: "Conozca al equipo",
+      aboutName: "Yessica Martinez",
+      aboutRole: "Contadora | Preparadora de impuestos",
+      aboutBio:
+        "Con más de 15 años de experiencia, ofrece servicios de preparación de impuestos y contabilidad de primer nivel en Hyattsville, MD y Glen Burnie, MD.",
+      aboutTitle: "Nuestro compromiso con la excelencia",
+      aboutBody:
+        "Nos enorgullece ofrecer servicios confiables de preparación de impuestos y soluciones contables para pequeñas empresas en Hyattsville y Glen Burnie. Nuestra experiencia asegura que cada cliente reciba el mejor servicio posible.",
+      trustTitle: "¿Por qué elegir JC Taxes?",
       trustStats: [
-        ["312", "clientes activos"],
-        ["2", "oficinas locales"],
-        ["EN / ES", "personal bilingüe"],
-        ["$4.8M", "créditos asegurados"],
+        ["1,000+", "Negocios atendidos"],
+        ["10,000+", "Declaraciones preparadas"],
+        ["15+", "Años de experiencia"],
+        ["100%", "Satisfacción del cliente"],
       ],
-      contactTitle: "Inicie la conversación",
-      contactSubtitle: "Escríbanos en inglés o español. Respondemos en un día hábil.",
+      locationsTitle: "Nuestras Ubicaciones",
+      locationsSubtitle: "Atendiendo Maryland, D.C. y Virginia",
+      locations: [
+        {
+          city: "Hyattsville, MD",
+          address: "3501 Hamilton St Suite 201C, Hyattsville, MD 20782",
+          phone: "301-732-1690",
+          description:
+            "Servicios de impuestos y contabilidad de primer nivel. Especialistas en impuestos de negocios y representación ante auditorías del IRS, con soluciones confiables y accesibles.",
+        },
+        {
+          city: "Glen Burnie, MD",
+          address: "7310 Richie Hwy 200/GB10, Glen Burnie, MD 21061",
+          phone: "240-877-8622",
+          description:
+            "Impuestos personales y de negocio, representación ante auditorías del IRS, además de planeación financiera, contabilidad y nómina para el área circundante.",
+        },
+      ],
+      contactTitle: "¡Hablemos!",
+      contactSubtitle: "Escríbanos en inglés o español y le responderemos pronto.",
+      emailLabel: "Correo",
       form: {
         name: "Nombre completo",
-        namePlaceholder: "Jane Miller",
+        namePlaceholder: "Su nombre",
         email: "Correo electrónico",
-        emailPlaceholder: "jane@company.com",
+        emailPlaceholder: "usted@correo.com",
         help: "¿Cómo podemos ayudarle?",
-        helpPlaceholder: "Necesito ayuda con la declaración de este año y estimados trimestrales…",
+        helpPlaceholder: "Necesito ayuda con la declaración de este año…",
         submit: "Enviar mensaje",
         reply: "Respondemos en un día hábil.",
       },
-      footer: "© 2024 JC Accounting & Tax Services LLC",
+      footer: "© 2026 JC Taxes and Accounting Services",
+      footerTag: "Atendiendo Maryland, D.C. y Virginia · EN / ES",
     },
   }[lang];
+
 
   return (
     <div className="min-h-screen bg-background text-ink font-body antialiased overflow-x-hidden">
@@ -150,7 +209,7 @@ function Index() {
         <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-ice/80 blur-3xl" />
       </div>
 
-      <header className="relative z-20">
+      <header id="top" className="relative z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="size-11 grid place-items-center bg-crimson text-white font-display font-bold text-lg tracking-tight clip-logo">
@@ -158,24 +217,25 @@ function Index() {
             </div>
             <div className="leading-tight">
               <p className="font-display font-bold text-ink text-[15px] tracking-tight">
-                JC Accounting & Tax
+                JC Taxes and Accounting
               </p>
               <p className="text-[10px] uppercase tracking-[0.28em] text-mist">
-                Services LLC
+                Services
               </p>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-9 text-[13px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item) => (
+            {t.nav.map((item, i) => (
               <a
                 key={item}
-                href="#"
+                href={["#top", "#services", "#about", "#locations", "#contact"][i]}
                 className="hover:text-ink transition-colors"
               >
                 {item}
               </a>
             ))}
           </nav>
+
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center rounded-full border border-border text-[11px] font-sans font-semibold px-1 py-1 bg-white/60">
               <button
@@ -264,26 +324,21 @@ function Index() {
                 <div className="mt-3 flex items-center justify-between px-1 pb-1">
                   <div>
                     <p className="font-sans font-semibold text-sm text-ink">
-                      {lang === "en" ? "Next available consult" : "Próxima consulta disponible"}
+                      {t.aboutName}
                     </p>
-                    <p className="text-[12px] text-mist">
-                      {lang === "en" ? "Mon, May 12 · 10:30 AM" : "Lun, 12 may · 10:30 a. m."}
-                    </p>
+                    <p className="text-[12px] text-mist">{t.aboutRole}</p>
                   </div>
                   <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.16em] text-crimson-soft">
-                    {lang === "en" ? "Slots open" : "Cupos abiertos"}
+                    15+ {lang === "en" ? "yrs" : "años"}
                   </span>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 hidden sm:block glass rounded-xl px-5 py-4 max-w-[220px]">
+              <div className="absolute -bottom-6 -left-6 hidden sm:block glass rounded-xl px-5 py-4 max-w-[230px]">
                 <div className="flex items-center gap-1 text-crimson-soft">
                   ★★★★★
                 </div>
                 <p className="mt-2 text-[12px] leading-snug text-ink/90 font-body">
-                  {t.trustQuote}
-                </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-mist">
-                  — {t.trustAuthor}
+                  {t.aboutBio}
                 </p>
               </div>
             </div>
@@ -306,28 +361,23 @@ function Index() {
                 href="#contact"
                 className="text-[13px] font-sans font-semibold text-ink-soft hover:text-ink transition-colors"
               >
-                {lang === "en" ? "All services →" : "Todos los servicios →"}
+                {lang === "en" ? "Ask about a service →" : "Pregunte por un servicio →"}
               </a>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {t.services.map((service, idx) => (
                 <div
                   key={service.title}
-                  className={`glass rounded-2xl p-7 hover:bg-white/90 transition-colors ${
-                    idx === 1 ? "md:translate-y-6" : ""
-                  }`}
+                  className="glass rounded-2xl p-6 hover:bg-white/90 transition-colors"
                 >
-                  <div className="size-12 grid place-items-center rounded-lg bg-crimson/10 text-crimson-soft font-display font-bold text-lg clip-logo">
-                    0{idx + 1}
+                  <div className="size-11 grid place-items-center rounded-lg bg-crimson/10 text-crimson-soft font-display font-bold clip-logo">
+                    {String(idx + 1).padStart(2, "0")}
                   </div>
-                  <h3 className="mt-5 font-display font-bold text-xl text-ink">
+                  <h3 className="mt-5 font-display font-bold text-lg text-ink leading-snug">
                     {service.title}
                   </h3>
                   <p className="mt-3 font-body text-[14px] text-ink-soft leading-relaxed">
                     {service.description}
-                  </p>
-                  <p className="mt-5 text-[12px] font-sans font-semibold text-crimson-soft">
-                    {service.price}
                   </p>
                 </div>
               ))}
@@ -337,30 +387,57 @@ function Index() {
 
         <section className="border-t border-border">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-ink mb-10">
+              {t.uniqueTitle}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.unique.map((item) => (
+                <div key={item.title} className="glass rounded-2xl p-8 flex flex-col">
+                  <h3 className="font-display font-bold text-2xl text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 font-body text-ink-soft leading-relaxed flex-1">
+                    {item.description}
+                  </p>
+                  <a
+                    href="#contact"
+                    className="mt-6 self-start bg-crimson hover:bg-crimson-soft transition-colors text-white font-sans font-semibold text-sm px-6 py-3 rounded-md clip-cta"
+                  >
+                    {item.cta}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="border-t border-border bg-white/60 backdrop-blur-sm">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
             <div className="relative rounded-2xl glass p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center overflow-hidden">
               <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-crimson/10 blur-3xl" />
               <div className="relative z-10">
                 <span className="text-xs font-semibold text-crimson-soft tracking-[0.14em] uppercase">
-                  {lang === "en" ? "Trusted locally" : "Confianza local"}
+                  {t.aboutLabel}
                 </span>
-                <blockquote className="mt-4 font-display text-xl md:text-2xl leading-snug text-pretty text-ink">
-                  “{t.trustQuote}”
-                </blockquote>
-                <div className="mt-5 flex items-center gap-3">
-                  <div className="size-11 rounded-full bg-ice flex items-center justify-center font-display font-bold text-ink-soft">
-                    RD
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-ink">R. Delgado</p>
-                    <p className="text-xs text-mist">{t.trustAuthor}</p>
-                  </div>
-                </div>
+                <h3 className="mt-4 font-display font-bold text-3xl text-ink">
+                  {t.aboutName}
+                </h3>
+                <p className="text-sm text-mist mt-1">{t.aboutRole}</p>
+                <p className="mt-4 font-body text-ink-soft leading-relaxed">
+                  {t.aboutBio}
+                </p>
+                <h4 className="mt-8 font-display font-bold text-xl text-ink">
+                  {t.aboutTitle}
+                </h4>
+                <p className="mt-3 font-body text-[15px] text-ink-soft leading-relaxed">
+                  {t.aboutBody}
+                </p>
               </div>
               <div className="relative z-10 rounded-xl bg-ink text-white p-6">
                 <p className="text-xs text-white/60 tracking-[0.14em] uppercase">
-                  {lang === "en" ? "By the numbers" : "En cifras"}
+                  {t.trustTitle}
                 </p>
-                <div className="mt-4 grid grid-cols-2 gap-y-5 gap-x-4">
+                <div className="mt-4 grid grid-cols-2 gap-y-6 gap-x-4">
                   {t.trustStats.map(([value, label]) => (
                     <div key={label}>
                       <p className="font-display text-2xl md:text-3xl font-bold">
@@ -375,6 +452,39 @@ function Index() {
           </div>
         </section>
 
+        <section id="locations" className="border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
+            <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.28em] text-crimson-soft mb-3">
+              {t.locationsSubtitle}
+            </p>
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-ink mb-10">
+              {t.locationsTitle}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.locations.map((loc) => (
+                <div key={loc.city} className="glass rounded-2xl p-8">
+                  <h3 className="font-display font-bold text-2xl text-ink">
+                    {loc.city}
+                  </h3>
+                  <p className="mt-4 font-body text-ink-soft leading-relaxed">
+                    {loc.description}
+                  </p>
+                  <p className="mt-6 text-sm text-ink font-sans font-semibold">
+                    {loc.address}
+                  </p>
+                  <a
+                    href={`tel:${loc.phone.replace(/-/g, "")}`}
+                    className="mt-2 inline-block text-sm font-sans font-semibold text-crimson hover:text-crimson-soft transition-colors"
+                  >
+                    {loc.phone}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
         <section id="contact" className="border-t border-border bg-white/60 backdrop-blur-sm">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
             <div className="grid lg:grid-cols-2 gap-12">
@@ -387,25 +497,29 @@ function Index() {
                 </h2>
                 <p className="mt-4 text-ink-soft max-w-md">{t.contactSubtitle}</p>
                 <div className="mt-8 space-y-4">
-                  <p className="flex items-center gap-3 text-sm text-ink-soft">
-                    <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
-                      ✆
-                    </span>
-                    (555) 014-2280
-                  </p>
+                  {t.locations.map((loc) => (
+                    <p key={loc.city} className="flex items-center gap-3 text-sm text-ink-soft">
+                      <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
+                        ✆
+                      </span>
+                      <span>
+                        <span className="font-semibold text-ink">{loc.city}</span>{" "}
+                        <a href={`tel:${loc.phone.replace(/-/g, "")}`} className="hover:text-crimson transition-colors">
+                          {loc.phone}
+                        </a>
+                      </span>
+                    </p>
+                  ))}
                   <p className="flex items-center gap-3 text-sm text-ink-soft">
                     <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
                       ✉
                     </span>
-                    hello@jcaccountingtax.com
-                  </p>
-                  <p className="flex items-center gap-3 text-sm text-ink-soft">
-                    <span className="grid place-items-center size-8 rounded-md bg-ice text-crimson font-display font-semibold">
-                      ◷
-                    </span>
-                    {lang === "en" ? "Mon–Fri, 8:30a–5:00p" : "Lun–Vie, 8:30–17:00"}
+                    <a href="mailto:Yessicamartinez893@gmail.com" className="hover:text-crimson transition-colors">
+                      Yessicamartinez893@gmail.com
+                    </a>
                   </p>
                 </div>
+
               </div>
               <form className="glass rounded-2xl p-6 md:p-8">
                 <div className="grid gap-5 sm:grid-cols-2">
@@ -463,22 +577,23 @@ function Index() {
             </div>
             <div className="leading-tight">
               <p className="font-display font-bold text-sm text-ink">
-                JC Accounting & Tax Services LLC
+                JC Taxes and Accounting Services
               </p>
-              <p className="text-[11px] text-mist">
-                {lang === "en"
-                  ? "Serving small businesses & individuals · EN / ES"
-                  : "Atendiendo pequeñas empresas y personas · EN / ES"}
-              </p>
+              <p className="text-[11px] text-mist">{t.footerTag}</p>
             </div>
           </div>
-          <div className="flex items-center gap-8 text-[12px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item) => (
-              <a key={item} href="#" className="hover:text-ink transition-colors">
+          <div className="flex flex-wrap items-center gap-8 text-[12px] font-sans font-semibold text-ink-soft">
+            {t.nav.map((item, i) => (
+              <a
+                key={item}
+                href={["#top", "#services", "#about", "#locations", "#contact"][i]}
+                className="hover:text-ink transition-colors"
+              >
                 {item}
               </a>
             ))}
           </div>
+
           <p className="text-[11px] text-mist">{t.footer}</p>
         </div>
       </footer>
