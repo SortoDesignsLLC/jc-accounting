@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 import { serviceImages } from "../lib/service-images";
-import dotMcImage from "../assets/svc-dot-mc.jpg";
+import dotMcAsset from "../assets/usdot-mc-truck.png.asset.json";
 import startupImage from "../assets/svc-startup.jpg";
 
 const uniqueImages = [dotMcImage, startupImage];
