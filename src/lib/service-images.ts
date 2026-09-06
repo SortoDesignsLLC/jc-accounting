@@ -1,5 +1,5 @@
 import taxPrep from "../assets/svc-tax-prep.jpg";
-import bookkeeping from "../assets/svc-bookkeeping.jpg";
+import bookkeepingAsset from "../assets/yessica-bookkeeping.jpg.asset.json";
 import consulting from "../assets/svc-consulting.jpg";
 import audit from "../assets/svc-audit.jpg";
 import notary from "../assets/svc-notary.jpg";
@@ -10,7 +10,7 @@ import more from "../assets/svc-more.jpg";
 /** Photos matched to the service list order in src/lib/content.ts */
 export const serviceImages = [
   taxPrep,
-  bookkeeping,
+  bookkeepingAsset.url,
   consulting,
   audit,
   notary,
