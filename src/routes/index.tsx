@@ -323,26 +323,21 @@ function Index() {
                 <div className="mt-3 flex items-center justify-between px-1 pb-1">
                   <div>
                     <p className="font-sans font-semibold text-sm text-ink">
-                      {lang === "en" ? "Next available consult" : "Próxima consulta disponible"}
+                      {t.aboutName}
                     </p>
-                    <p className="text-[12px] text-mist">
-                      {lang === "en" ? "Mon, May 12 · 10:30 AM" : "Lun, 12 may · 10:30 a. m."}
-                    </p>
+                    <p className="text-[12px] text-mist">{t.aboutRole}</p>
                   </div>
                   <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.16em] text-crimson-soft">
-                    {lang === "en" ? "Slots open" : "Cupos abiertos"}
+                    15+ {lang === "en" ? "yrs" : "años"}
                   </span>
                 </div>
               </div>
-              <div className="absolute -bottom-6 -left-6 hidden sm:block glass rounded-xl px-5 py-4 max-w-[220px]">
+              <div className="absolute -bottom-6 -left-6 hidden sm:block glass rounded-xl px-5 py-4 max-w-[230px]">
                 <div className="flex items-center gap-1 text-crimson-soft">
                   ★★★★★
                 </div>
                 <p className="mt-2 text-[12px] leading-snug text-ink/90 font-body">
-                  {t.trustQuote}
-                </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-mist">
-                  — {t.trustAuthor}
+                  {t.aboutBio}
                 </p>
               </div>
             </div>
@@ -365,28 +360,23 @@ function Index() {
                 href="#contact"
                 className="text-[13px] font-sans font-semibold text-ink-soft hover:text-ink transition-colors"
               >
-                {lang === "en" ? "All services →" : "Todos los servicios →"}
+                {lang === "en" ? "Ask about a service →" : "Pregunte por un servicio →"}
               </a>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {t.services.map((service, idx) => (
                 <div
                   key={service.title}
-                  className={`glass rounded-2xl p-7 hover:bg-white/90 transition-colors ${
-                    idx === 1 ? "md:translate-y-6" : ""
-                  }`}
+                  className="glass rounded-2xl p-6 hover:bg-white/90 transition-colors"
                 >
-                  <div className="size-12 grid place-items-center rounded-lg bg-crimson/10 text-crimson-soft font-display font-bold text-lg clip-logo">
-                    0{idx + 1}
+                  <div className="size-11 grid place-items-center rounded-lg bg-crimson/10 text-crimson-soft font-display font-bold clip-logo">
+                    {String(idx + 1).padStart(2, "0")}
                   </div>
-                  <h3 className="mt-5 font-display font-bold text-xl text-ink">
+                  <h3 className="mt-5 font-display font-bold text-lg text-ink leading-snug">
                     {service.title}
                   </h3>
                   <p className="mt-3 font-body text-[14px] text-ink-soft leading-relaxed">
                     {service.description}
-                  </p>
-                  <p className="mt-5 text-[12px] font-sans font-semibold text-crimson-soft">
-                    {service.price}
                   </p>
                 </div>
               ))}
@@ -396,30 +386,57 @@ function Index() {
 
         <section className="border-t border-border">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-ink mb-10">
+              {t.uniqueTitle}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.unique.map((item) => (
+                <div key={item.title} className="glass rounded-2xl p-8 flex flex-col">
+                  <h3 className="font-display font-bold text-2xl text-ink">
+                    {item.title}
+                  </h3>
+                  <p className="mt-4 font-body text-ink-soft leading-relaxed flex-1">
+                    {item.description}
+                  </p>
+                  <a
+                    href="#contact"
+                    className="mt-6 self-start bg-crimson hover:bg-crimson-soft transition-colors text-white font-sans font-semibold text-sm px-6 py-3 rounded-md clip-cta"
+                  >
+                    {item.cta}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="border-t border-border bg-white/60 backdrop-blur-sm">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
             <div className="relative rounded-2xl glass p-8 md:p-10 grid md:grid-cols-2 gap-8 items-center overflow-hidden">
               <div className="absolute -top-20 -right-20 h-64 w-64 rounded-full bg-crimson/10 blur-3xl" />
               <div className="relative z-10">
                 <span className="text-xs font-semibold text-crimson-soft tracking-[0.14em] uppercase">
-                  {lang === "en" ? "Trusted locally" : "Confianza local"}
+                  {t.aboutLabel}
                 </span>
-                <blockquote className="mt-4 font-display text-xl md:text-2xl leading-snug text-pretty text-ink">
-                  “{t.trustQuote}”
-                </blockquote>
-                <div className="mt-5 flex items-center gap-3">
-                  <div className="size-11 rounded-full bg-ice flex items-center justify-center font-display font-bold text-ink-soft">
-                    RD
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-ink">R. Delgado</p>
-                    <p className="text-xs text-mist">{t.trustAuthor}</p>
-                  </div>
-                </div>
+                <h3 className="mt-4 font-display font-bold text-3xl text-ink">
+                  {t.aboutName}
+                </h3>
+                <p className="text-sm text-mist mt-1">{t.aboutRole}</p>
+                <p className="mt-4 font-body text-ink-soft leading-relaxed">
+                  {t.aboutBio}
+                </p>
+                <h4 className="mt-8 font-display font-bold text-xl text-ink">
+                  {t.aboutTitle}
+                </h4>
+                <p className="mt-3 font-body text-[15px] text-ink-soft leading-relaxed">
+                  {t.aboutBody}
+                </p>
               </div>
               <div className="relative z-10 rounded-xl bg-ink text-white p-6">
                 <p className="text-xs text-white/60 tracking-[0.14em] uppercase">
-                  {lang === "en" ? "By the numbers" : "En cifras"}
+                  {t.trustTitle}
                 </p>
-                <div className="mt-4 grid grid-cols-2 gap-y-5 gap-x-4">
+                <div className="mt-4 grid grid-cols-2 gap-y-6 gap-x-4">
                   {t.trustStats.map(([value, label]) => (
                     <div key={label}>
                       <p className="font-display text-2xl md:text-3xl font-bold">
@@ -433,6 +450,39 @@ function Index() {
             </div>
           </div>
         </section>
+
+        <section id="locations" className="border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
+            <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.28em] text-crimson-soft mb-3">
+              {t.locationsSubtitle}
+            </p>
+            <h2 className="font-display font-bold text-4xl md:text-5xl tracking-tight text-ink mb-10">
+              {t.locationsTitle}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {t.locations.map((loc) => (
+                <div key={loc.city} className="glass rounded-2xl p-8">
+                  <h3 className="font-display font-bold text-2xl text-ink">
+                    {loc.city}
+                  </h3>
+                  <p className="mt-4 font-body text-ink-soft leading-relaxed">
+                    {loc.description}
+                  </p>
+                  <p className="mt-6 text-sm text-ink font-sans font-semibold">
+                    {loc.address}
+                  </p>
+                  <a
+                    href={`tel:${loc.phone.replace(/-/g, "")}`}
+                    className="mt-2 inline-block text-sm font-sans font-semibold text-crimson hover:text-crimson-soft transition-colors"
+                  >
+                    {loc.phone}
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
         <section id="contact" className="border-t border-border bg-white/60 backdrop-blur-sm">
           <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
