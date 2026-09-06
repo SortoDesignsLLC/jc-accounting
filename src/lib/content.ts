@@ -18,6 +18,7 @@ const en = {
   servicesTitle: "Our Services",
   servicesSubtitle: "Everything individuals and small businesses need, in one office.",
   askAboutService: "Ask about a service →",
+  allServices: "All Services",
   services: [
     { title: "Tax Preparation and Filing", description: "Individual and business returns prepared accurately and filed on time." },
     { title: "Bookkeeping & Payroll", description: "Clean monthly books and payroll handled so your records stay audit-ready." },
@@ -113,6 +114,7 @@ const es: typeof en = {
   servicesTitle: "Nuestros Servicios",
   servicesSubtitle: "Todo lo que personas y pequeñas empresas necesitan, en una sola oficina.",
   askAboutService: "Pregunte por un servicio →",
+  allServices: "Todos los servicios",
   services: [
     { title: "Preparación y presentación de impuestos", description: "Declaraciones personales y de negocios preparadas con precisión y presentadas a tiempo." },
     { title: "Contabilidad y nómina", description: "Libros mensuales ordenados y nómina puntual para mantener sus registros al día." },
