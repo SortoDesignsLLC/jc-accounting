@@ -1,7 +1,3 @@
-const KEY = import.meta.env["VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY"] as
-  | string
-  | undefined;
-
 export type Office = {
   label: string;
   query: string;
@@ -25,11 +21,6 @@ export const OFFICES: Office[] = [
 ];
 
 function srcFor(office: Office) {
-  if (KEY) {
-    return `https://www.google.com/maps/embed/v1/place?key=${KEY}&q=${encodeURIComponent(
-      office.query,
-    )}&zoom=15`;
-  }
   const d = 0.01;
   const bbox = `${office.lng - d},${office.lat - d},${office.lng + d},${office.lat + d}`;
   return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${office.lat},${office.lng}`;
@@ -43,22 +34,20 @@ export function OfficeMap({
   directionsLabel?: string;
 }) {
   return (
-    <div>
+    <div className="office-map">
       <iframe
         title={`Map of the JC Taxes office in ${office.label}`}
         src={srcFor(office)}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="w-full h-[240px] rounded-lg border border-border bg-ice"
+
         allowFullScreen
       />
       <a
-        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-          office.query,
-        )}`}
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(office.query)}`}
         target="_blank"
         rel="noreferrer"
-        className="mt-3 inline-block text-[12px] font-sans font-semibold text-crimson hover:text-crimson-soft transition-colors"
+        className="text-link"
       >
         {directionsLabel}
       </a>

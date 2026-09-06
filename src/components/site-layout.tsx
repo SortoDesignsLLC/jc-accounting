@@ -1,108 +1,218 @@
 import { Link } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import logo from "../assets/jc-accounting-logo.png";
 import { useLang } from "../lib/lang";
 
 const NAV_PATHS = ["/", "/services", "/about", "/locations", "/contact"] as const;
 
+export function Brand({ footer = false }: { footer?: boolean }) {
+  return (
+    <Link
+      to="/"
+      className={`brand ${footer ? "brand-footer" : ""}`}
+      aria-label="JC Taxes and Accounting — Home"
+    >
+      <img
+        className="brand-logo"
+        src={logo}
+        alt="JC Accounting & Tax Help Services LLC"
+        width={2172}
+        height={724}
+      />
+    </Link>
+  );
+}
+
 export function SiteShell({ children }: { children: ReactNode }) {
   const { lang, setLang, t } = useLang();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const shell = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const nodes = shell.current?.querySelectorAll<HTMLElement>("[data-reveal]");
+    if (
+      !nodes ||
+      !window.IntersectionObserver ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    )
+      return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 },
+    );
+    nodes.forEach((node) => {
+      node.classList.add("will-reveal");
+      observer.observe(node);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    dialog.current?.showModal();
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [menuOpen]);
+
+  const closeMenu = () => {
+    dialog.current?.close();
+    setMenuOpen(false);
+  };
+  const languageSwitch = (
+    <div className="language-switch" aria-label={lang === "en" ? "Language" : "Idioma"}>
+      <button
+        type="button"
+        lang="en"
+        aria-label="English"
+        aria-pressed={lang === "en"}
+        onClick={() => setLang("en")}
+      >
+        EN
+      </button>
+      <span aria-hidden="true">/</span>
+      <button
+        type="button"
+        lang="es"
+        aria-label="Español"
+        aria-pressed={lang === "es"}
+        onClick={() => setLang("es")}
+      >
+        ES
+      </button>
+    </div>
+  );
 
   return (
-    <div className="min-h-screen bg-background text-ink font-body antialiased overflow-x-hidden">
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <div className="absolute -top-40 -left-24 h-96 w-96 rounded-full bg-cool/15 blur-3xl" />
-        <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-crimson/10 blur-3xl" />
-        <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-ice/80 blur-3xl" />
+    <div className="site-shell" ref={shell}>
+      <a className="skip-link" href="#main-content">
+        {lang === "en" ? "Skip to content" : "Ir al contenido"}
+      </a>
+      <div className="business-topbar">
+        <div className="page-width">
+          <span>
+            {lang === "en"
+              ? "Serving Maryland, D.C. & Virginia"
+              : "Atendiendo Maryland, D.C. y Virginia"}
+          </span>
+          <a href="tel:3017321690">
+            {lang === "en" ? "Call our team: " : "Llámenos: "}301-732-1690
+          </a>
+        </div>
       </div>
-
-      <header id="top" className="relative z-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="size-11 grid place-items-center bg-crimson text-white font-display font-bold text-lg tracking-tight clip-logo">
-              JC
-            </div>
-            <div className="leading-tight">
-              <p className="font-display font-bold text-ink text-[15px] tracking-tight">
-                JC Taxes and Accounting
-              </p>
-              <p className="text-[10px] uppercase tracking-[0.28em] text-mist">
-                Services
-              </p>
-            </div>
-          </Link>
-          <nav className="hidden md:flex items-center gap-9 text-[13px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item, i) => {
-              const to = NAV_PATHS[i]!;
-              return (
-                <Link
-                  key={item}
-                  to={to}
-                  activeProps={{ className: "text-ink" }}
-                  activeOptions={{ exact: to === "/" }}
-                  className="hover:text-ink transition-colors"
-                >
-                  {item}
-                </Link>
-              );
-            })}
+      <header className="site-header">
+        <div className="header-inner">
+          <Brand />
+          <nav
+            className="desktop-nav"
+            aria-label={lang === "en" ? "Main navigation" : "Navegación principal"}
+          >
+            {t.nav.slice(1, 4).map((label, i) => (
+              <Link
+                key={NAV_PATHS[i + 1]}
+                to={NAV_PATHS[i + 1]!}
+                activeProps={{ className: "is-active", "aria-current": "page" }}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
-
-          <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center rounded-full border border-border text-[11px] font-sans font-semibold px-1 py-1 bg-white/60">
-              <button
-                onClick={() => setLang("en")}
-                className={`px-2.5 py-1 rounded-full transition-colors ${
-                  lang === "en" ? "bg-ink text-white" : "text-mist hover:text-ink"
-                }`}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => setLang("es")}
-                className={`px-2.5 py-1 rounded-full transition-colors ${
-                  lang === "es" ? "bg-ink text-white" : "text-mist hover:text-ink"
-                }`}
-              >
-                ES
-              </button>
-            </div>
-            <Link
-              to="/contact"
-              className="bg-crimson hover:bg-crimson-soft transition-colors text-white font-sans font-semibold text-[13px] px-5 py-2.5 rounded-md clip-cta"
-            >
-              {t.bookCta}
+          <div className="header-actions">
+            {languageSwitch}
+            <Link to="/contact" className="button button-small header-cta">
+              {lang === "en" ? "Free Consultation" : "Consulta gratuita"}
+              <ArrowUpRight size={16} />
             </Link>
+            <button
+              className="menu-toggle"
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label={lang === "en" ? "Open menu" : "Abrir menú"}
+              aria-expanded={menuOpen}
+              aria-controls="mobile-navigation"
+            >
+              <Menu size={23} />
+            </button>
           </div>
         </div>
       </header>
-
-      <main>{children}</main>
-
-      <footer className="border-t border-border bg-white/80 backdrop-blur-sm">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="size-9 grid place-items-center bg-crimson text-white font-display font-bold text-sm clip-logo">
-              JC
-            </div>
-            <div className="leading-tight">
-              <p className="font-display font-bold text-sm text-ink">
-                JC Taxes and Accounting Services
-              </p>
-              <p className="text-[11px] text-mist">{t.footerTag}</p>
-            </div>
-          </Link>
-          <div className="flex flex-wrap items-center gap-8 text-[12px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item, i) => (
-              <Link
-                key={item}
-                to={NAV_PATHS[i]!}
-                className="hover:text-ink transition-colors"
-              >
-                {item}
+      {menuOpen && (
+        <dialog
+          ref={dialog}
+          id="mobile-navigation"
+          className="mobile-menu"
+          onCancel={closeMenu}
+          onClose={() => setMenuOpen(false)}
+          aria-label={lang === "en" ? "Navigation menu" : "Menú de navegación"}
+        >
+          <div className="mobile-menu-top">
+            <Brand />
+            <button
+              type="button"
+              className="menu-toggle"
+              onClick={closeMenu}
+              aria-label={lang === "en" ? "Close menu" : "Cerrar menú"}
+            >
+              <X />
+            </button>
+          </div>
+          <nav aria-label={lang === "en" ? "Mobile navigation" : "Navegación móvil"}>
+            {t.nav.map((label, i) => (
+              <Link key={NAV_PATHS[i]} to={NAV_PATHS[i]!} onClick={closeMenu}>
+                <span>0{i + 1}</span>
+                {label}
+                <ArrowUpRight size={22} />
+              </Link>
+            ))}
+          </nav>
+          <p>{t.footerTag}</p>
+          {languageSwitch}
+        </dialog>
+      )}
+      <main id="main-content" tabIndex={-1}>
+        {children}
+      </main>
+      <footer className="site-footer">
+        <div className="page-width footer-top">
+          <div>
+            <Brand footer />
+            <p>{t.footerTag}</p>
+          </div>
+          <div className="footer-links">
+            {t.nav.slice(1).map((label, i) => (
+              <Link key={NAV_PATHS[i + 1]} to={NAV_PATHS[i + 1]!}>
+                {label}
               </Link>
             ))}
           </div>
-          <p className="text-[11px] text-mist">{t.footer}</p>
+          <a className="footer-phone" href="tel:3017321690">
+            301-732-1690
+            <ArrowUpRight size={18} />
+            <span>
+              {lang === "en"
+                ? "A conversation is a good place to start."
+                : "Todo comienza con una conversación."}
+            </span>
+          </a>
+        </div>
+        <div className="page-width footer-bottom">
+          <span>{t.footer}</span>
+          <span>
+            {lang === "en"
+              ? "Good with numbers. Better with people."
+              : "Expertos en números. Cercanos a usted."}
+          </span>
         </div>
       </footer>
     </div>

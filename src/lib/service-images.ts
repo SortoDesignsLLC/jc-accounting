@@ -1,7 +1,7 @@
-import taxPrep from "../assets/svc-tax-prep.jpg";
-import bookkeepingAsset from "../assets/yessica-bookkeeping.jpg.asset.json";
-import consultingAsset from "../assets/yessica-consulting.jpg.asset.json";
-import audit from "../assets/svc-audit.jpg";
+import taxPrep from "../assets/generated-tax-preparation.jpg";
+import bookkeeping from "../assets/generated-bookkeeping.jpg";
+import consulting from "../assets/generated-business-advice.jpg";
+import audit from "../assets/generated-tax-resolution.jpg";
 import notary from "../assets/svc-notary.jpg";
 import translation from "../assets/svc-translation.jpg";
 import planning from "../assets/svc-planning.jpg";
@@ -10,8 +10,8 @@ import more from "../assets/svc-more.jpg";
 /** Photos matched to the service list order in src/lib/content.ts */
 export const serviceImages = [
   taxPrep,
-  bookkeepingAsset.url,
-  consultingAsset.url,
+  bookkeeping,
+  consulting,
   audit,
   notary,
   translation,

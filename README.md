@@ -1,26 +1,34 @@
 # Site Scout
 
-can you analyze this website before doing anything? 
-
-https://samuelsorto94.wixsite.com/jc-tax
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/ff6f047e-a31d-4430-9408-81a2cd9c9d10).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+Website for JC Accounting & Tax Services LLC, built with React, TanStack Start,
+TypeScript, Tailwind CSS, and Vite.
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Install Node.js 22.12+ and Bun, then run:
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
+bun install --frozen-lockfile
+bun run dev
 ```
+
+## Production
+
+```sh
+bun run build
+bun run start
+```
+
+Nitro produces the server and static assets in `.output`. See the
+[TanStack Start hosting guide](https://tanstack.com/start/latest/docs/framework/react/guide/hosting)
+for deployment options.
+
+## Checks
+
+```sh
+bun run lint
+bunx tsc --noEmit
+```
+
+Site photos are stored in `src/assets`. Office maps use OpenStreetMap embeds;
+no API keys or environment variables are required.
