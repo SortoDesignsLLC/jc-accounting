@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { OfficeMaps } from "../components/office-map";
+import { OFFICES, OfficeMap } from "../components/office-map";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 
@@ -31,8 +31,8 @@ function LocationsPage() {
             {t.locationsTitle}
           </h1>
           <div className="grid md:grid-cols-2 gap-6">
-            {t.locations.map((loc) => (
-              <div key={loc.city} className="glass rounded-2xl p-8">
+            {t.locations.map((loc, i) => (
+              <div key={loc.city} className="glass rounded-2xl p-8 flex flex-col">
                 <h2 className="font-display font-bold text-2xl text-ink">
                   {loc.city}
                 </h2>
@@ -48,12 +48,11 @@ function LocationsPage() {
                 >
                   {loc.phone}
                 </a>
+                <div className="mt-6">
+                  <OfficeMap office={OFFICES[i]!} />
+                </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-8">
-            <OfficeMaps />
           </div>
         </div>
       </section>

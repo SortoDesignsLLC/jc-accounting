@@ -35,36 +35,33 @@ function srcFor(office: Office) {
   return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${office.lat},${office.lng}`;
 }
 
-export function OfficeMaps() {
+export function OfficeMap({
+  office,
+  directionsLabel = "Get directions →",
+}: {
+  office: Office;
+  directionsLabel?: string;
+}) {
   return (
-    <div className="grid md:grid-cols-2 gap-6">
-      {OFFICES.map((office) => (
-        <div key={office.label} className="glass rounded-2xl p-3">
-          <iframe
-            title={`Map of the JC Taxes office in ${office.label}`}
-            src={srcFor(office)}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-[280px] rounded-lg border-0 bg-ice"
-            allowFullScreen
-          />
-          <div className="flex items-center justify-between px-2 py-3">
-            <p className="font-sans font-semibold text-sm text-ink">
-              {office.label}
-            </p>
-            <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                office.query,
-              )}`}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[12px] font-sans font-semibold text-crimson hover:text-crimson-soft transition-colors"
-            >
-              Get directions →
-            </a>
-          </div>
-        </div>
-      ))}
+    <div>
+      <iframe
+        title={`Map of the JC Taxes office in ${office.label}`}
+        src={srcFor(office)}
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="w-full h-[240px] rounded-lg border border-border bg-ice"
+        allowFullScreen
+      />
+      <a
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+          office.query,
+        )}`}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-3 inline-block text-[12px] font-sans font-semibold text-crimson hover:text-crimson-soft transition-colors"
+      >
+        {directionsLabel}
+      </a>
     </div>
   );
 }
