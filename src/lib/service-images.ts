@@ -11,7 +11,7 @@ import more from "../assets/svc-more.jpg";
 export const serviceImages = [
   taxPrep,
   bookkeepingAsset.url,
-  consulting,
+  consultingAsset.url,
   audit,
   notary,
   translation,
