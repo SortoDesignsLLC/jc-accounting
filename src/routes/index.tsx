@@ -50,13 +50,13 @@ function Index() {
               {t.ctaSecondary}
             </Link>
           </div>
-          <div className="mt-12 glass rounded-2xl px-6 py-5 grid grid-cols-3 gap-4">
-            {t.stats.map(([value, label]) => (
-              <div key={label}>
-                <p className="font-display font-bold text-2xl md:text-3xl text-ink">
+          <div className="mt-12 glass rounded-2xl px-6 py-5 grid grid-cols-3 gap-x-5 gap-y-4 divide-x divide-border">
+            {t.stats.map(([value, label], i) => (
+              <div key={label} className={i > 0 ? "pl-5" : undefined}>
+                <p className="font-display font-bold text-[clamp(1.35rem,2.4vw,1.9rem)] leading-none tabular-nums whitespace-nowrap text-ink">
                   {value}
                 </p>
-                <p className="text-[11px] uppercase tracking-[0.18em] text-mist mt-1">
+                <p className="text-[10.5px] uppercase tracking-[0.12em] text-mist mt-2 leading-snug">
                   {label}
                 </p>
               </div>
