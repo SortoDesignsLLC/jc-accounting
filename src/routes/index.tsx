@@ -118,19 +118,39 @@ function Index() {
             {t.services.slice(0, 4).map((service, idx) => (
               <div
                 key={service.title}
-                className="glass rounded-2xl p-6 hover:bg-white/90 transition-colors"
+                className="glass rounded-2xl overflow-hidden hover:bg-white/90 transition-colors flex flex-col"
               >
-                <div className="size-11 grid place-items-center rounded-lg bg-crimson/10 text-crimson-soft font-display font-bold clip-logo">
-                  {String(idx + 1).padStart(2, "0")}
+                <div className="relative">
+                  <img
+                    src={serviceImages[idx]}
+                    alt={service.title}
+                    loading="lazy"
+                    width={800}
+                    height={600}
+                    className="w-full aspect-[4/3] object-cover bg-ice"
+                  />
+                  <div className="absolute top-3 left-3 size-9 grid place-items-center rounded-md bg-white/85 backdrop-blur-sm text-crimson-soft font-display font-bold text-sm">
+                    {String(idx + 1).padStart(2, "0")}
+                  </div>
                 </div>
-                <h3 className="mt-5 font-display font-bold text-lg text-ink leading-snug">
-                  {service.title}
-                </h3>
-                <p className="mt-3 font-body text-[14px] text-ink-soft leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="p-6 flex-1">
+                  <h3 className="font-display font-bold text-lg text-ink leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 font-body text-[14px] text-ink-soft leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <Link
+              to="/services"
+              className="bg-crimson hover:bg-crimson-soft transition-colors text-white font-sans font-semibold text-sm px-8 py-3.5 rounded-md clip-cta"
+            >
+              {t.allServices}
+            </Link>
           </div>
         </div>
       </section>
