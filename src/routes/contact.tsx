@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
+import teamAsset from "../assets/jc-team.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -25,6 +26,14 @@ function ContactPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
+              <div className="relative overflow-hidden rounded-2xl ring-1 ring-border bg-ice mb-8">
+                <img
+                  src={teamAsset.url}
+                  alt="JC Taxes and Accounting Services team at the office"
+                  className="w-full aspect-[3/2] object-cover"
+                  loading="lazy"
+                />
+              </div>
               <p className="text-[11px] font-sans font-semibold uppercase tracking-[0.28em] text-crimson-soft mb-3">
                 {t.contactEyebrow}
               </p>
