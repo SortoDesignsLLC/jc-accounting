@@ -209,7 +209,7 @@ function Index() {
         <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-ice/80 blur-3xl" />
       </div>
 
-      <header className="relative z-20">
+      <header id="top" className="relative z-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="size-11 grid place-items-center bg-crimson text-white font-display font-bold text-lg tracking-tight clip-logo">
@@ -217,24 +217,25 @@ function Index() {
             </div>
             <div className="leading-tight">
               <p className="font-display font-bold text-ink text-[15px] tracking-tight">
-                JC Accounting & Tax
+                JC Taxes and Accounting
               </p>
               <p className="text-[10px] uppercase tracking-[0.28em] text-mist">
-                Services LLC
+                Services
               </p>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-9 text-[13px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item) => (
+            {t.nav.map((item, i) => (
               <a
                 key={item}
-                href="#"
+                href={["#top", "#services", "#about", "#locations", "#contact"][i]}
                 className="hover:text-ink transition-colors"
               >
                 {item}
               </a>
             ))}
           </nav>
+
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center rounded-full border border-border text-[11px] font-sans font-semibold px-1 py-1 bg-white/60">
               <button
