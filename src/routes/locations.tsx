@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { OfficeMaps } from "../components/office-map";
+import { OFFICES, OfficeMap } from "../components/office-map";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 
