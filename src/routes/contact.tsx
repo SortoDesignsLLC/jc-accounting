@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
+import teamAsset from "../assets/jc-team.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
