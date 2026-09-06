@@ -31,17 +31,20 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </div>
           </Link>
           <nav className="hidden md:flex items-center gap-9 text-[13px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item, i) => (
-              <Link
-                key={item}
-                to={NAV_PATHS[i]}
-                activeProps={{ className: "text-ink" }}
-                activeOptions={{ exact: NAV_PATHS[i] === "/" }}
-                className="hover:text-ink transition-colors"
-              >
-                {item}
-              </Link>
-            ))}
+            {t.nav.map((item, i) => {
+              const to = NAV_PATHS[i]!;
+              return (
+                <Link
+                  key={item}
+                  to={to}
+                  activeProps={{ className: "text-ink" }}
+                  activeOptions={{ exact: to === "/" }}
+                  className="hover:text-ink transition-colors"
+                >
+                  {item}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">
@@ -92,7 +95,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             {t.nav.map((item, i) => (
               <Link
                 key={item}
-                to={NAV_PATHS[i]}
+                to={NAV_PATHS[i]!}
                 className="hover:text-ink transition-colors"
               >
                 {item}
