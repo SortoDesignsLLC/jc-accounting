@@ -576,22 +576,23 @@ function Index() {
             </div>
             <div className="leading-tight">
               <p className="font-display font-bold text-sm text-ink">
-                JC Accounting & Tax Services LLC
+                JC Taxes and Accounting Services
               </p>
-              <p className="text-[11px] text-mist">
-                {lang === "en"
-                  ? "Serving small businesses & individuals · EN / ES"
-                  : "Atendiendo pequeñas empresas y personas · EN / ES"}
-              </p>
+              <p className="text-[11px] text-mist">{t.footerTag}</p>
             </div>
           </div>
-          <div className="flex items-center gap-8 text-[12px] font-sans font-semibold text-ink-soft">
-            {t.nav.map((item) => (
-              <a key={item} href="#" className="hover:text-ink transition-colors">
+          <div className="flex flex-wrap items-center gap-8 text-[12px] font-sans font-semibold text-ink-soft">
+            {t.nav.map((item, i) => (
+              <a
+                key={item}
+                href={["#top", "#services", "#about", "#locations", "#contact"][i]}
+                className="hover:text-ink transition-colors"
+              >
                 {item}
               </a>
             ))}
           </div>
+
           <p className="text-[11px] text-mist">{t.footer}</p>
         </div>
       </footer>
