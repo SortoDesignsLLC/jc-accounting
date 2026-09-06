@@ -136,18 +136,20 @@ function Index() {
 
       <section className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-20">
-          <div className="rounded-2xl bg-ink text-white p-8 md:p-12 grid md:grid-cols-[1fr_auto] gap-10 items-center">
+          <div className="rounded-2xl bg-ink/95 text-white p-8 md:p-12 grid md:grid-cols-[1fr_auto] gap-10 items-center ring-1 ring-white/10">
             <div>
-              <p className="text-xs text-white/60 tracking-[0.14em] uppercase mb-6">
+              <p className="text-[12px] font-sans font-semibold text-white tracking-[0.18em] uppercase mb-7">
                 {t.trustTitle}
               </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-6 gap-x-8">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-y-7 gap-x-8">
                 {t.trustStats.map(([value, label]) => (
                   <div key={label}>
-                    <p className="font-display text-2xl md:text-3xl font-bold">
+                    <p className="font-display text-[clamp(1.5rem,2.6vw,2rem)] leading-none font-bold tabular-nums whitespace-nowrap text-white">
                       {value}
                     </p>
-                    <p className="text-xs text-white/60 mt-1">{label}</p>
+                    <p className="text-[12px] text-white/85 mt-2 leading-snug">
+                      {label}
+                    </p>
                   </div>
                 ))}
               </div>
