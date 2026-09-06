@@ -3,9 +3,9 @@ import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 import { serviceImages } from "../lib/service-images";
 import dotMcAsset from "../assets/usdot-mc-truck.png.asset.json";
-import startupImage from "../assets/svc-startup.jpg";
+import startupAsset from "../assets/yessica-startup.jpg.asset.json";
 
-const uniqueImages = [dotMcAsset.url, startupImage];
+const uniqueImages = [dotMcAsset.url, startupAsset.url];
 
 export const Route = createFileRoute("/services")({
   head: () => ({
