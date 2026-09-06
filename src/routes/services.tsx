@@ -5,7 +5,7 @@ import { serviceImages } from "../lib/service-images";
 import dotMcAsset from "../assets/usdot-mc-truck.png.asset.json";
 import startupImage from "../assets/svc-startup.jpg";
 
-const uniqueImages = [dotMcImage, startupImage];
+const uniqueImages = [dotMcAsset.url, startupImage];
 
 export const Route = createFileRoute("/services")({
   head: () => ({
