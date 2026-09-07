@@ -118,10 +118,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
             className="desktop-nav"
             aria-label={lang === "en" ? "Main navigation" : "Navegación principal"}
           >
-            {t.nav.slice(1, 4).map((label, i) => (
+            {t.nav.slice(0, 4).map((label, i) => (
               <Link
-                key={NAV_PATHS[i + 1]}
-                to={NAV_PATHS[i + 1]!}
+                key={NAV_PATHS[i]}
+                to={NAV_PATHS[i]!}
+                activeOptions={i === 0 ? { exact: true } : undefined}
                 activeProps={{ className: "is-active", "aria-current": "page" }}
               >
                 {label}
