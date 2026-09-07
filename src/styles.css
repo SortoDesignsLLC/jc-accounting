@@ -2641,6 +2641,15 @@ h2 em,
   height: auto;
   object-fit: contain;
 }
+.business-team-photo > img.why-choose-portrait {
+  display: block;
+  height: 440px;
+  max-height: 110vw;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #e9ebf4;
+}
 .brand-footer .brand-logo {
   width: 300px;
 }

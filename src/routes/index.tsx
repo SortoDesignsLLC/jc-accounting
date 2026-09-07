@@ -9,7 +9,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import yessica from "../assets/yessica-martinez.jpg";
-import team from "../assets/jc-team.jpg";
+import whyChoosePortrait from "../assets/jc-why-choose-portrait.jpeg";
 import { SiteShell } from "../components/site-layout";
 import { ContactInvitation } from "../components/site-sections";
 import { useLang } from "../lib/lang";
@@ -187,15 +187,16 @@ function Index() {
         <div className="page-width business-why-inner" data-reveal>
           <div className="business-team-photo">
             <img
-              src={team}
+              src={whyChoosePortrait}
+              className="why-choose-portrait"
               alt={
                 en
-                  ? "The JC Taxes and Accounting team in their Maryland office"
-                  : "El equipo de JC en su oficina de Maryland"
+                  ? "Woman holding a folder at JC Accounting and Tax Services"
+                  : "Mujer sosteniendo una carpeta en JC Accounting and Tax Services"
               }
               loading="lazy"
-              width={1320}
-              height={882}
+              width={341}
+              height={512}
             />
             <div>
               <strong>

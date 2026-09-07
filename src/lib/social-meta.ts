@@ -12,7 +12,7 @@ export const siteOrigin = publicOrigin(configuredOrigin);
 export function socialMeta(path: string) {
   const image = siteOrigin ? `${siteOrigin}/social/jc-accounting-preview.jpg` : undefined;
   return [
-    { property: "og:site_name", content: "JC Accounting & Tax Help Services LLC" },
+    { property: "og:site_name", content: "JC Accounting and Tax Services" },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
     ...(image
@@ -25,13 +25,13 @@ export function socialMeta(path: string) {
           {
             property: "og:image:alt",
             content:
-              "JC Accounting & Tax Help Services LLC — Accounting you can count on, with Yessica Martinez.",
+              "JC Accounting and Tax Services — Accounting you can count on, with Yessica Martinez.",
           },
           { name: "twitter:image", content: image },
           {
             name: "twitter:image:alt",
             content:
-              "JC Accounting & Tax Help Services LLC — Accounting you can count on, with Yessica Martinez.",
+              "JC Accounting and Tax Services — Accounting you can count on, with Yessica Martinez.",
           },
         ]
       : []),

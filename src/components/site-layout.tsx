@@ -11,14 +11,14 @@ export function Brand({ footer = false }: { footer?: boolean }) {
     <Link
       to="/"
       className={`brand ${footer ? "brand-footer" : ""}`}
-      aria-label="JC Taxes and Accounting — Home"
+      aria-label="JC Accounting and Tax Services — Home"
     >
       <img
         className="brand-logo"
         src={logo}
-        alt="JC Accounting & Tax Help Services LLC"
-        width={2172}
-        height={724}
+        alt="JC Accounting and Tax Services"
+        width={2152}
+        height={731}
       />
     </Link>
   );
