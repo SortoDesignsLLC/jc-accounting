@@ -10,7 +10,7 @@ function publicOrigin(value: string | undefined) {
 }
 export const siteOrigin = publicOrigin(configuredOrigin);
 export function socialMeta(path: string) {
-  const image = siteOrigin ? `${siteOrigin}/social/jc-accounting-preview.jpg` : undefined;
+  const image = siteOrigin ? `${siteOrigin}/social/jc-accounting-preview-v2.jpg` : undefined;
   return [
     { property: "og:site_name", content: "JC Accounting and Tax Services" },
     { property: "og:type", content: "website" },

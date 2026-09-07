@@ -1,6 +1,6 @@
 # Sharing preview and icons
 
-The share artwork is `public/social/jc-accounting-preview.jpg` (1200 × 630). Created with the built-in OpenAI image-generation tool using the existing logo and Yessica's portrait. The favicon is a simplified native SVG JC emblem, rendered to PNG and a genuine multi-size ICO.
+The share artwork is `public/social/jc-accounting-preview-v2.jpg` (1200 × 630). The versioned filename refreshes cached previews after artwork changes. Created with the built-in OpenAI image-generation tool using the existing logo and Yessica's portrait. The favicon is a simplified native SVG JC emblem, rendered to PNG and a genuine multi-size ICO.
 
 ## Public URL configuration
 
