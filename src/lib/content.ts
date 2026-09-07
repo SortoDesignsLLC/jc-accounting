@@ -70,8 +70,8 @@ const en = {
         "Top-rated tax preparation and accounting services. Specializing in business tax preparation and IRS audit representation, we provide reliable, affordable tax solutions for individuals and businesses.",
     },
     {
-      city: "Glen Burnie, MD",
-      address: "7310 Richie Hwy 200/GB10, Glen Burnie, MD 21061",
+      city: "Hanover, MD",
+      address: "7467 Ridge Rd, Suite 310, Hanover, MD 21076",
       phone: "240-877-8622",
       description:
         "Individual tax services, business tax preparation and IRS audit representation, plus personalized financial planning, bookkeeping and payroll services for the surrounding areas.",
@@ -166,8 +166,8 @@ const es: typeof en = {
         "Servicios de impuestos y contabilidad de primer nivel. Especialistas en impuestos de negocios y representación ante auditorías del IRS, con soluciones confiables y accesibles.",
     },
     {
-      city: "Glen Burnie, MD",
-      address: "7310 Richie Hwy 200/GB10, Glen Burnie, MD 21061",
+      city: "Hanover, MD",
+      address: "7467 Ridge Rd, Suite 310, Hanover, MD 21076",
       phone: "240-877-8622",
       description:
         "Impuestos personales y de negocio, representación ante auditorías del IRS, además de planeación financiera, contabilidad y nómina para el área circundante.",

@@ -13,10 +13,10 @@ export const OFFICES: Office[] = [
     lng: -76.9436,
   },
   {
-    label: "Glen Burnie, MD",
-    query: "7310 Ritchie Hwy, Glen Burnie, MD 21061",
-    lat: 39.1583,
-    lng: -76.6119,
+    label: "Hanover, MD",
+    query: "7467 Ridge Rd, Suite 310, Hanover, MD 21076",
+    lat: 39.16158,
+    lng: -76.7111,
   },
 ];
 
