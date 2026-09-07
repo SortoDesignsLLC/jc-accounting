@@ -1,4 +1,4 @@
-# Site Scout
+# JC Accounting
 
 Website for JC Accounting & Tax Services LLC, built with React, TanStack Start,
 TypeScript, Tailwind CSS, and Vite.
