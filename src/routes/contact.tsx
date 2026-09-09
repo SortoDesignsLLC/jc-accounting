@@ -4,7 +4,7 @@ import { SiteShell } from "../components/site-layout";
 import { useLang } from "../lib/lang";
 import { ArrowUpRight, Phone, Mail } from "lucide-react";
 import { useState, type FormEvent } from "react";
-import team from "../assets/jc-team.jpg";
+import contactPhoto from "../assets/jc-contact.jpeg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -64,10 +64,10 @@ function ContactPage() {
       <section className="contact-layout page-width">
         <div className="contact-details" data-reveal>
           <img
-            src={team}
-            alt={en ? "Your JC accounting team" : "Su equipo de contabilidad JC"}
+            src={contactPhoto}
+            alt={en ? "JC accounting professional at the office" : "Profesional de contabilidad de JC en la oficina"}
             width={1320}
-            height={882}
+            height={1857}
           />
           <div className="contact-lines">
             {t.locations.map((office) => (

@@ -2730,10 +2730,14 @@ h2 em,
 .specialty img.specialty-portrait {
   object-position: center 12%;
 }
-.business-team-photo > img,
-.contact-details img {
+.business-team-photo > img {
   height: auto;
   aspect-ratio: 1320 / 882;
+  object-fit: contain;
+}
+.contact-details img {
+  height: auto;
+  aspect-ratio: 1320 / 1857;
   object-fit: contain;
 }
 @media (max-width: 600px) {
